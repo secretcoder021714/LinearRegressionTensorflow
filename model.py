@@ -1,9 +1,16 @@
+#Import section
 import numpy as np
+print("Version of np : " , np.__version__)
 import tensorflow as tf
+print("Version of tensorflow : " , tf.__version__)
 import matplotlib.pyplot as plt
 
 x = np.array([1,2,3,4,5,6,7,9])
 y = x*2+10
+
+#ploting for un-normalize data
+plt.plot(x,y)
+plt.show()
 
 mean_x = x.mean()
 x = x - mean_x
@@ -14,6 +21,11 @@ mean_y = y.mean()
 y = y - mean_y
 std_y = y.std()
 y = y / std_y
+
+#ploting for normalize data
+plt.plot(x,y)
+plt.show()
+
 
 print("x is : ",x)
 print("y is : ",y)
@@ -28,6 +40,6 @@ his = model.fit(x,y,epochs=10)
 import matplotlib.pyplot as plt
 plt.plot(his.history['loss'])
 plt.title("Loss Curve")
-plt.plot()
+plt.show()
 
 print("Prediction : ",(model.predict((np.array([10,20,30,80])-mean_x)/std_x) * std_y)+mean_y)
