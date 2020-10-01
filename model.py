@@ -1,11 +1,14 @@
 #This is iumport section
 import numpy as np
+print("Version of numpy is : ",np.__version__)
 import tensorflow as tf
+print("Version of tensorflow is : ",tf.__version__)
 import matplotlib.pyplot as plt
 
 x = np.array([1,2,3,4,5,6,7,9])
 y = x*2+10
 
+#ploting un-normalize data
 plt.plot(x , y)
 plt.title("1. X v/s y")
 plt.show()
